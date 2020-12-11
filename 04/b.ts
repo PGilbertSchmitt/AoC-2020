@@ -79,7 +79,7 @@ const validPair = (key: keys, val: string) => {
 };
 
 const main = () => {
-  const document = input();
+  const document = input;
   const passports = getPassports(document).map(parsePassport);
 
   console.log(filter(

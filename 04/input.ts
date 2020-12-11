@@ -1,4 +1,4 @@
-import { getInputString } from "../util/input";
+import input from "../util/input";
 
 const test = `ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
 byr:1937 iyr:2017 cid:147 hgt:183cm
@@ -1211,19 +1211,4 @@ eyr:2022
 
 iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719`;
 
-export default (): string => {
-  const mode = getInputString();
-  switch (mode) {
-    case "actual":
-      return actual;
-    case "test":
-      return test;
-    case "invalid":
-      return invalid;
-    case "valid":
-      return valid;
-    default:
-      console.error(`Unknown mode ${mode}`);
-      process.exit(1);
-  }
-}
+export default input({ test, actual, invalid, valid });

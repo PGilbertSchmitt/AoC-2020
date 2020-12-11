@@ -13,7 +13,7 @@ const isValid = (passport: Passport): boolean => {
 }
 
 const main = () => {
-  const document = input();
+  const document = input;
   const passports = getPassports(document).map(parsePassport);
 
   console.log(filter(

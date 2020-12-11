@@ -4,7 +4,7 @@ import { createMap, Bag, BagNode, bagString } from "./parse";
 const printBag = ({count, color, strength}: Bag) => `{${count} ${strength} ${color}}`;
 
 const main = () => {
-  const map = createMap(input());
+  const map = createMap(input);
 
   const getParents = (bags: Bag[], s: Set<string>) => bags.map(bag => {
     const str = bagString(bag);

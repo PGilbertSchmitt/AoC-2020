@@ -15,7 +15,7 @@ const getChildren = (m: ReturnType<typeof createMap>, bags: Bag[], mult: number)
 });
 
 const main = () => {
-  const map = createMap(input());
+  const map = createMap(input);
   const start = map.get("shiny:gold");
     if (!start) {
     console.error("ERROR");

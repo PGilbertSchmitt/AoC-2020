@@ -2,7 +2,7 @@ import input from "./input";
 import { getSeatID } from "./parse";
 
 const main = () => {
-  const passes = input();
+  const passes = input;
   
   let seats = new Set<number>();
   for (let pass of passes) {

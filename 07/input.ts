@@ -1,4 +1,4 @@
-import { getInputString } from "../util/input"; 
+import input from "../util/input"; 
 
 const test = `light red bags contain 1 bright white bag, 2 muted yellow bags.
 dark orange bags contain 3 bright white bags, 4 muted yellow bags.
@@ -613,14 +613,4 @@ dark green bags contain 2 dark blue bags.
 dark blue bags contain 2 dark violet bags.
 dark violet bags contain no other bags.`;
 
-export default (): string => {
-  const mode = getInputString();
-  switch (mode) {
-    case "test": return test;
-    case "actual": return actual;
-    case "test2": return test2;
-    default:
-      console.error(`Unknown mode '${mode}'`);
-      process.exit(1);
-  }
-};
+export default input({ test, test2, actual });

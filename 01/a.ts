@@ -1,4 +1,4 @@
-import { input, test } from "./input"
+import input from "./input"
 
 const doesSum = (a: number, b: number) => a + b === 2020;
 
@@ -27,5 +27,4 @@ const run = (list: number[]): output | null => {
   return run(rest);
 };
 
-// console.log(run(test));
 console.log(run(input));

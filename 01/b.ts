@@ -1,4 +1,4 @@
-import { input, test } from "./input"
+import input from "./input"
 import { sort } from "ramda";
 
 interface output {
@@ -43,5 +43,4 @@ const main = (expenses: number[]) => {
   console.log(run(sort(comp, expenses), numSet));
 };
 
-// main(test);
 main(input);

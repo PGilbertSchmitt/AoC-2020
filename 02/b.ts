@@ -34,7 +34,7 @@ const isPasswordValid = ({posA, posB, element, password}: IRule): boolean => {
 };
 
 const main = () => {
-  const lines = input(process.argv[2]);
+  const lines = input;
   const valid = lines.reduce(
     (total, line) => total + (isPasswordValid(parseLine(line)) ? 1 : 0),
     0

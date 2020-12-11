@@ -1,4 +1,6 @@
-export const test = [
+import input from "../util/input";
+
+const test = [
   1721,
   979,
   366,
@@ -7,7 +9,7 @@ export const test = [
   1456
 ];
 
-export const input = [
+const actual = [
   1539,
   1914,
   1866,
@@ -209,3 +211,5 @@ export const input = [
   1982,
   1544
 ];
+
+export default input({ test, actual });

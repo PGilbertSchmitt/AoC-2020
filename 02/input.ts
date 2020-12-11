@@ -1,3 +1,5 @@
+import input from "../util/input";
+
 const test = [
   "1-3 a: abcde",
   "1-3 b: cdefg",
@@ -1007,14 +1009,4 @@ const actual = [
   "4-9 f: xfcfthqzw",
 ];
 
-export default (mode: string) => {
-  switch (mode) {
-    case "test":
-      return test;
-    case "actual":
-      return actual;
-    default:
-      console.error(`Unknown mode ${mode}`);
-      process.exit(1);
-  }
-}
+export default input({ test, actual });

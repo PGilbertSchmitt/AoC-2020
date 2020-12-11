@@ -1,4 +1,4 @@
-import { getInputString } from "../util/input";
+import input from "../util/input";
 
 const test = `abc
 
@@ -2218,13 +2218,4 @@ veolzqfjgah
 bdlitrzuwh
 epfmuhgvstibr`;
 
-export default (): string => {
-  const mode = getInputString();
-  switch (mode) {
-    case "test": return test;
-    case "actual": return actual;
-    default:
-      console.error(`Unknown mode '${mode}'`);
-      process.exit(1);
-  }
-};
+export default input({ test, actual });

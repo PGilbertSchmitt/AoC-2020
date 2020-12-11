@@ -6,7 +6,7 @@ export const isTree = (pos: number, row: string) => {
 }
 
 const main = () => {
-  const rows = input(process.argv[2]);
+  const rows = input;
   let curPos = 0;
 
   const treeTotal = reduce(

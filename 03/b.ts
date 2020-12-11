@@ -25,7 +25,7 @@ const getLineTotal = (path: IPath, map: string[]) => {
 };
 
 const main = () => {
-  const map = input(process.argv[2]);
+  const map = input;
 
   const paths = [
     { right: 1, down: 1 },
