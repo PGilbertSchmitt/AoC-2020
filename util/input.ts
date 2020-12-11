@@ -13,6 +13,6 @@ export default <T>(modes: Modes<T>) => {
     return input;
   }
 
-  console.error(`Unknown mode '${mode}, returning test'`);
+  console.error(`Unknown mode '${mode}', returning test`);
   return modes["test"];
 };
