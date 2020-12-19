@@ -14,18 +14,14 @@ export class Pocket {
 
   private hash ([w, x, y, z]: Vector): number {
     // This will only work for this problem because 6 iterations will
-    // not be enough for there to be collisions. I would need a fast
-    // tuple hashing algorith or a different storage method in order
-    // to allow this to work quickly for arbitrarily-large inputs.
-    // I have tested a conversion to strings as well, which is fine,
-    // but is about 20%-30% slower than this solution. There are more
-    // optimizations to make here.
-    return w + (x*1000) + (y*1000000) + (z*1000000000);
+    // not be enough for there to be collisions
+    return w + (x*100) + (y*10000) + (z*1000000);
   }
 
   public add(v: Vector) {
     const hash = this.hash(v);
     const [_, count] = this.o.get(hash) || [this.nul, 0];
+    // console.log(`${v} currently has ${count} blocks, setting to ${count + 1}`);
     this.o.set(hash, [v, count+1]);
 
     return this;

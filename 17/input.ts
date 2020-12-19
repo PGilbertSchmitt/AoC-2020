@@ -1,5 +1,7 @@
 import input from "../util/input";
 
+const small = `###`;
+
 const test = `.#.
 ..#
 ###`;
@@ -13,4 +15,4 @@ const actual = `.#.#..##
 ...##.##
 #...#.#.`;
 
-export default input({ test, actual });
+export default input({ small, test, actual });

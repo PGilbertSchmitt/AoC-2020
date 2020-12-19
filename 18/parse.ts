@@ -1,4 +1,4 @@
-import { reverse, add, multiply } from "ramda";
+import { add, multiply } from "ramda";
 
 enum Token {
   PLUS="+",
