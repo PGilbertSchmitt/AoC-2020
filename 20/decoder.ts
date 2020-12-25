@@ -26,30 +26,31 @@ export const createTile = ({id, tile}: RawTile): Tile => {
       bottom: edgeToNums(bottom),
       left: edgeToNums(left),
     },
-    neighbors: []
+    neighbors: [],
+    data: tile
   };
 };
 
-// enum Dir {
-//   TOP = "top",
-//   BOTTOM = "bottom",
-//   RIGHT = "right",
-//   LEFT = "left"
-// }
+export enum Dir {
+  TOP = "top",
+  BOTTOM = "bottom",
+  RIGHT = "right",
+  LEFT = "left"
+}
 
-type Tile = {
+export type Tile = {
   id: number;
   edges: {
-    top: [number, number];
-    bottom: [number, number];
-    right: [number, number];
-    left: [number, number];
+    [key in Dir]: [number, number];
   }
-  neighbors: Tile[]
+  neighbors: Tile[],
+  data: string[]
 };
 
+export type Registry = Map<number, Tile[]>;
+
 export const buildRegistry = (tiles: Tile[]) => {
-  const tileRegistry = new Map<number, Tile[]>();
+  const tileRegistry: Registry = new Map();
   for (let tile of tiles) {
     for (let [a, b] of values(tile.edges)) {
       let tileArray: Tile[] = tileRegistry.get(a) || [];
@@ -59,4 +60,10 @@ export const buildRegistry = (tiles: Tile[]) => {
     }
   }
   return tileRegistry;
+};
+
+// Gets the complement of an edge number;
+export const complement = (edge: number) => {
+  const binStr = edge.toString(2).padStart(10, "0");
+  return parseInt(reverse(binStr), 2);
 };
